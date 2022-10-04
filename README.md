@@ -1,15 +1,13 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# School Library
 
-> Description the project.
+> A tool to record what books are in the library and who borrows them.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+
 
 ## Live Demo (if available)
 
@@ -42,15 +40,10 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@therealadetunji](https://github.com/therealadetunji)
+- Twitter: [@madetunji1376](https://twitter.com/madetunji1376)
 
-👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
