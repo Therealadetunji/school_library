@@ -7,7 +7,10 @@ class Classroom
   attr_reader :students
 
   def add_students(student)
-    @students << student
+    @students.push(student)
     @students.classroom = self
   end
 end
+
+classroom = Classroom.new('class 1', 3)
+print classroom.label
