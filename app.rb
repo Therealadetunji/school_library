@@ -3,6 +3,7 @@ require './person'
 require './rental'
 require './student'
 require './teacher'
+
 class App
   attr_accessor :rentals, :books, :persons
 
@@ -34,15 +35,15 @@ class App
     parent_permission = gets.chomp.capitalize
     case parent_permission
     when 'Y'
-      true
+      parent_permission = true
     when 'N'
-      false
+      parent_permission = false
     else
       puts 'Please enter valid command'
     end
 
-    student = Student.new(age, name, parent_permission: true)
-    @person.push(student)
+    student = Student.new(age, name, parent_permission)
+    @persons.push(student)
     puts 'Person created Successfully'
   end
 
@@ -54,15 +55,15 @@ class App
     print 'Specialization: '
     specialization = gets.chomp
 
-    teacher = Teacher.new(specialization, age, name, parent_permission: true)
-    @person.push(teacher)
+    teacher = Teacher.new(specialization, age, name)
+    @persons.push(teacher)
     puts 'Person created Successfully'
   end
 
   def list_people
     if @persons.length.positive?
-      @persons.each do |_person|
-        puts "[#{person.class}] Name: #{person.name}, Age: #{person.age}, ID: #{person.id}"
+      @persons.each do |person|
+        puts " [#{person.class}] Name: #{person.name}, Age: #{person.age}, ID: #{person.id}"
       end
     else
       puts 'No List of people'
@@ -79,9 +80,9 @@ class App
     puts 'Book created Successfully'
   end
 
-  def list_of_book
+  def list_of_books
     if @books.length.positive?
-      @books.each do |_book|
+      @books.each do |book|
         puts "Title: #{book.title}, Author: #{book.author}"
       end
     else
@@ -93,21 +94,21 @@ class App
     return unless @books.length.positive?
 
     puts 'Select a book from the following list by number'
-    @books.each_index do |_book, _index|
-      puts "#({index}) Title: #{book.title}, Author: #{book.author}"
+    @books.each_with_index do |book, _index|
+      puts "#{_index}) Title: #{book.title}, Author: #{book.author}"
     end
     book_choice = gets.chomp.to_i
 
     puts 'select a person from the following list by number (not id)'
     return unless @persons.length.positive?
 
-    @persons.each_index do |person, _i|
-      puts "#({i}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    @persons.each_with_index do |person, _i|
+      puts "#{_i}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     person_choice = gets.chomp.to_i
     puts 'Date: '
     date_choice = gets.chomp
-    rental = Rental.new(date_choice, @people[person_choice], @books[book_choice])
+    rental = Rental.new(date_choice, @persons[person_choice], @books[book_choice])
     @rentals.push(rental)
     puts 'Rental created successfully'
   end

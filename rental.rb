@@ -1,7 +1,7 @@
 class Rental
-  def initialize(date, pesron, book)
+  def initialize(date, person, book)
     @date = date
-    @person = pesron
+    @person = person
     @book = book
     book.rentals.push(self)
     person.rentals.push(self)
