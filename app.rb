@@ -94,16 +94,16 @@ class App
     return unless @books.length.positive?
 
     puts 'Select a book from the following list by number'
-    @books.each_with_index do |book, _index|
-      puts "#{_index}) Title: #{book.title}, Author: #{book.author}"
+    @books.each_with_index do |book, index|
+      puts "#{index}) Title: #{book.title}, Author: #{book.author}"
     end
     book_choice = gets.chomp.to_i
 
     puts 'select a person from the following list by number (not id)'
     return unless @persons.length.positive?
 
-    @persons.each_with_index do |person, _i|
-      puts "#{_i}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    @persons.each_with_index do |person, i|
+      puts "#{i}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     person_choice = gets.chomp.to_i
     puts 'Date: '
