@@ -1,5 +1,5 @@
 class Book
-  def initialize(title, author, _rentals)
+  def initialize(title, author)
     @title = title
     @author = author
     @rentals = []
